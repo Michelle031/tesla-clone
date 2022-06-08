@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { selectCars } from "../features/car/carSlice";
 import {useSelector} from "react-redux";
+import  logo  from './images/logo.svg';
 
 function Header() {
   const [burgerStatus, setBurgerStatus] = useState(false);
@@ -11,7 +12,7 @@ function Header() {
   return (
     <Container>
      <a href='./'>
-       <img src='/images/logo.svg' alt='' />
+       <img src={logo} alt='' />
      </a>
      <Menu>
        {cars && cars.map((car, index) => (
@@ -51,6 +52,7 @@ const Container = styled.div`
   left: 0;
   right: 0;
   z-index: 1;
+  
 `;
 
 const Menu = styled.div`
@@ -99,6 +101,7 @@ const BurgerNav = styled.div`
   flex-direction: column;
   text-align: start;
   transform : ${props => props.show ? "translateX(0)": "translateX(100%)"};
+  
   transition: transform 0.3s ease-in;
 
   li {
